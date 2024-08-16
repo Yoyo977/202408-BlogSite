@@ -1,0 +1,59 @@
+.navbar {
+    overflow: hidden;
+    background-color: #f3e7e7;
+    font-size: 20px;
+    font-family: cursive;
+}
+.navbar a {
+    float: right;
+    display: block;
+    color: blue;
+    text-align: center;
+    padding: 15px 15px; 
+}
+.blog{
+    text-align: center; 
+}
+h2{
+    font-size: 40px;
+    font-family: cursive;
+    margin-top: 10px;
+    margin-bottom: 8px;
+}
+
+.btn{
+    background-color:rgb(110, 110, 199);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+    border-radius: 50px;
+    width: 100px;
+    padding: 8px 0;
+  }
+   
+  .btn:active {
+    box-shadow: 0 5px 15px black;
+    transform: translateY(4px);
+  }
+
+.container {
+    position: relative;
+    /* 确保容器有足够的高度以容纳底部的图片 */
+    min-height: 65vh; /* 设置最小高度为视口的高度 */
+}
+
+img{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 1400px;
+    z-index: -1; 
+}
+
