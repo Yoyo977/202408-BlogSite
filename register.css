@@ -28,7 +28,7 @@ h1{
     display: inline-block;
     width: 100px;
     text-align: left;
-    font-family: cursive; 
+    font-family: "cursive"; 
     font-size: 20px;
 }
 
@@ -59,4 +59,8 @@ input{
     border-radius: 3px;
     font-family: cursive;
     border-radius: 5px;
+}
+
+footer{
+    text-align: center;
 }

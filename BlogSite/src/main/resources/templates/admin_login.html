@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>admin_login</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" th:href="@{/css/login.css}">
 </head>
 
 <body>
     <header>
-        <img src="image/cat.png" alt="">
+        <img th:src="@{/image/cat.png}" alt="">
     </header>
     <main>
         <section class="login">
-            <form action="#" method="post">
+            <form th:action="@{/admin/login}" method="post">
                 <h1>Login</h1>
                 <form class="login-form">
                     <div class="control-group">
@@ -34,9 +34,9 @@
             </form>
         </section>
     </main>
-    <footer>
-        <small>&copy; 202408 zrongron</small>
-    </footer>
+	<footer>
+	        <small>&copy; 202408 zrongron</small>
+	    </footer>
 </body>
 
 </html>

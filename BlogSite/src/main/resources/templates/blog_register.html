@@ -4,60 +4,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>商品編集画面</title>
-    <link rel="stylesheet" href="blog.css">
+    <title>商品登録画面</title>
+    <link rel="stylesheet" th:href="@{/css/blog.css}">
 </head>
 
 <body>
     <section class="blog">
         <nav class="navbar">
-            <div class="navbar">
-                <a href="#">ログアウト</a>
-                <a href="#">商品一覧</a>
-                <a href="#">トップページ</a>
-            </div>
+            <ul>
+                <li><a href="#">ログアウト</a></li>
+                <li><a href="#">商品一覧</a></li>
+                <li><a href="#">トップページ</a></li>
+            </ul>
         </nav>
         <main>
             <div class="main-inner">
                 <section class="register-section">
-                    <h2>商品編集画面</h2>
+                    <h2>商品登録画面</h2>
                     <form action="" method="post" enctype="multipart/form-data">
                         <div class="register-section-details">
                             <div class="register-section-details_flex">
                                 <div>商品名</div>
-                                <input type="text" name="blogName" value="">
+                                <input type="text" name="blogName" value="" id="adminName">
                             </div>
                             <div class="register-section-details_flex">
                                 <div>カテゴリー</div>
                                 <select name="blogCategory">
                                     <option value=""></option>
-                                    <option value="シャープペン" selected="">シャープペン</option>
-                                    <option value="消しゴム" selected="">消しゴム</option>
-                                    <option value="鉛筆" selected="">鉛筆</option>
-                                    <option value="本" selected="">本</option>
-                                    <option value="ハサミ" selected="">ハサミ</option>
-                                    <option value="印鑑" selected="">印鑑</option>
+                                    <option value="シャープペン">シャープペン</option>
+                                    <option value="消しゴム">消しゴム</option>
+                                    <option value="鉛筆">鉛筆</option>
+                                    <option value="本">本</option>
+                                    <option value="ハサミ">ハサミ</option>
+                                    <option value="印鑑">印鑑</option>
                                 </select>
                             </div>
                             <div class="register-section-details_flex">
                                 <div>商品画像</div>
-                                <input type="file" name="productImage">
+                                <input type="file" name="blogImage">
                             </div>
                             <div class="register-section-details_flex">
                                 <div>商品の説明</div>
-                                <textarea name="productDescription" placeholder="商品の説明文"></textarea>
+                                <textarea name="blogDescription" placeholder="商品の説明文"></textarea>
                             </div>
+
                         </div>
                         <div class="button-container">
-                            <input type="hidden" name="productId" value="">
-                            <button class="update">更新</button>
+                            <button class="update">登録</button>
                             <button class="back-btn" onclick="history.back();" type="button">戻る</button>
-                        </div>
-                    </form>
-                    <form th:action="" method="post">
-                        <div class="button-container">
-                            <input type="hidden" name="productId" value="">
-                            <button class="edit">削除</button>
                         </div>
                     </form>
                 </section>

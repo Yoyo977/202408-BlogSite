@@ -1,3 +1,6 @@
+body{
+    font-family: "cursive"; 
+}
 img{
     width: 100%;
     height: 100%;
@@ -6,31 +9,32 @@ img{
     left: 0;
     top: 0;
 }
-
-.login{
+.register{
     width: 600px;
-    height: 400px;
+    height: 340px;
     margin: 100px auto;
-    background-color: rgb(241, 194, 202);
+    background-color:rgb(241, 206, 177);
     padding: 30px;
     border-radius: 10px;
     z-index: 1;
 }
+
 h1{
     font-size: 50px;
-    font-family: cursive;
+    font-family: cursive; 
     text-align: center;
     color: rgb(90, 59, 18);
     margin-top: 5px;
 }
 
-.login-field-icon{
+.register-field-icon{
     display: inline-block;
     width: 100px;
     text-align: left;
-    font-family: cursive; 
+    font-family: "cursive"; 
     font-size: 20px;
 }
+
 .control-group{
     margin-bottom: 10px;
     text-align: center; 
@@ -47,12 +51,6 @@ input{
     font-family: cursive; 
 }
 
-h3{
-    font-size: 11px;
-    text-align: center; 
-    font-family: cursive;
-}
-
 .btn {
     border: 1px solid transparent;
     background-color: beige;
@@ -65,6 +63,7 @@ h3{
     font-family: cursive;
     border-radius: 5px;
 }
+
 footer{
     text-align: center;
 }
