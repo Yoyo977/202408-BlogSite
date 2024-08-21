@@ -14,17 +14,17 @@
     </header>
     <main>
         <section class="login">
-            <form th:action="@{/admin/login}" method="post">
+            <form th:action="@{/admin/login/process}" method="post">
                 <h1>Login</h1>
                 <form class="login-form">
                     <div class="control-group">
-                        <label class="login-field-icon" for="login-email">Email</label>
-                        <input type="email" class="login-field" name="login-email" placeholder="例:test@test.com"
+                        <label class="login-field-icon" for="adminEmail">Email</label>
+                        <input type="email" class="login-field" name="adminEmail" placeholder="例:test@test.com"
                             id="login-email" required>
                     </div>
                     <div class="control-group">
-                        <label class="login-field-icon" for="login-pass">Password</label>
-                        <input type="password" class="login-field" name="login-pass" id="login-pass" required>
+                        <label class="login-field-icon" for="password">Password</label>
+                        <input type="password" class="login-field" name="password" id="login-pass" required>
                     </div>
                     <h3>※半角、全角、スペースも認識されますのでご注意ください。</h3>
                     <div class="control-group">

@@ -1,91 +1,103 @@
 body {
-    /* 加背景图 */
-    background-image: url(image/set.png);
-    background-size: cover;
-    backdrop-filter: blur(5px);
+	/* 加背景图 */
+	background-image: url(image/set.png);
+	background-size: cover;
 }
 
 .navbar {
-    overflow: hidden;
-    background-color: #f3e7e7;
-    font-size: 20px;
-    font-family: cursive;
-    border-bottom: 1px solid #ecb6b6;
+	overflow: hidden;
+	background-color: #f3e7e7;
+	font-size: 20px;
+	font-family: cursive;
+	border-bottom: 1px solid #ecb6b6;
 }
 
 .navbar {
-    /* 清除浮动 */
-    overflow: hidden;
-    /* 设置背景色 */
-    background-color: #f3e7e7;
-    /* 字体颜色 */
-    font-size: 20px;
-    /* 下横线颜色 */
-    border-bottom: 1px solid #ecb6b6;
+	/* 清除浮动 */
+	overflow: hidden;
+	/* 设置背景色 */
+	background-color: #f3e7e7;
+	/* 字体颜色 */
+	font-size: 20px;
+	/* 下横线颜色 */
+	border-bottom: 1px solid #ecb6b6;
 }
+
 .navbar a {
-    float: right;
-    display: block;
-    color: blue;
-    text-align: center;
-    padding: 15px 15px; 
-    text-decoration: none;
-    padding-bottom: 15px;
-    padding-top: 15px;
+	float: right;
+	display: block;
+	color: blue;
+	text-align: center;
+	padding: 15px 15px;
+	text-decoration: none;
+	padding-bottom: 15px;
+	padding-top: 15px;
 }
+
 /* 导航链接 - 悬停/激活样式 */
-.navbar a:hover, .navbar a.active {
-    background-color: #ecb6b6; /* 悬停时的背景色 */
-    color: rgb(138, 73, 73); /* 悬停时的文本颜色 */
+.navbar a:hover,
+.navbar a.active {
+	background-color: #ecb6b6;
+	/* 悬停时的背景色 */
+	color: rgb(138, 73, 73);
+	/* 悬停时的文本颜色 */
 }
+
 /* 导航栏列表样式 */
 .navbar ul {
-    list-style-type: none; /* 移除列表的标记 */
-    margin: 0; /* 边距 */
-    padding: 0; /* 内边距 */
+	list-style-type: none;
+	/* 移除列表的标记 */
+	margin: 0;
+	/* 边距 */
+	padding: 0;
+	/* 内边距 */
 }
 
 
-.blog{
-    text-align: center;
-    font-family: "cursive"; 
+.blog {
+	text-align: center;
+	font-family: "cursive";
+	z-index: 1;
 }
 
-h2{
-    font-size: 40px;
-    font-family: cursive;
-    margin-top: 10px;
-    margin-bottom: 8px;
-    color: #7c2929;;
+h2 {
+	font-size: 40px;
+	font-family: cursive;
+	margin-top: 10px;
+	margin-bottom: 8px;
+	color: #7c2929;
+	;
 }
 
-.btn{
-    background-color:rgb(110, 110, 199);
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    transition: box-shadow 0.3s;
-    border-radius: 50px;
-    width: 100px;
-    padding: 8px 0;
-  }
-   
-  .btn:active {
-    box-shadow: 0 5px 15px black;
-    transform: translateY(4px);
-  }
+.btn {
+	background-color: rgb(110, 110, 199);
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	transition: box-shadow 0.3s;
+	border-radius: 50px;
+	width: 100px;
+	padding: 8px 0;
+}
+
+.btn:active {
+	box-shadow: 0 5px 15px black;
+	transform: translateY(4px);
+}
 
 .container {
-    position: relative;
-    /* 确保容器有足够的高度以容纳底部的图片 */
-    min-height: 65vh; /* 设置最小高度为视口的高度 */
+	position: relative;
+	/* 确保容器有足够的高度以容纳底部的图片 */
+	min-height: 65vh;
+	/* 设置最小高度为视口的高度 */
 }
-footer{
-    text-align: center;
+
+footer {
+	text-align: center;
 }

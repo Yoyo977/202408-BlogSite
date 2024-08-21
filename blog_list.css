@@ -1,8 +1,10 @@
-body {
-    /* 加背景图 */
-    background-image: url(image/set.png);
-    background-size: cover;
-    backdrop-filter: blur(5px);
+img{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -1; 
+    left: 0;
+    top: 0;
 }
 
 .navbar {
@@ -48,7 +50,8 @@ body {
 
 .blog{
     text-align: center;
-    font-family: "cursive"; 
+    font-family: "cursive";
+    z-index: 1; 
 }
 
 h2{
@@ -57,6 +60,28 @@ h2{
     margin-top: 10px;
     margin-bottom: 8px;
     color: #7c2929;;
+}
+
+/*----------商品一覧--------------*/
+.blog_list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+}
+.blog_list li{
+    width: 25%;
+    list-style-type: none;
+}
+.blog_list li a img{
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+.blog_list li a p{
+    text-align: center;
+    color: #594A4E;
+    font-weight: bold;
+    padding: 1rem 0;
+    font-size: 1.2rem;
 }
 
 .btn{

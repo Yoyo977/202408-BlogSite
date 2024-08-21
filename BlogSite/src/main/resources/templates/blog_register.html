@@ -12,16 +12,16 @@
     <section class="blog">
         <nav class="navbar">
             <ul>
-                <li><a href="#">ログアウト</a></li>
-                <li><a href="#">商品一覧</a></li>
-                <li><a href="#">トップページ</a></li>
+                <li><a th:href="@{/admin/logout}">ログアウト</a></li>
+                <li><a th:href="@{/blog/list}">商品一覧</a></li>
+                <li><a href="">トップページ</a></li>
             </ul>
         </nav>
         <main>
             <div class="main-inner">
                 <section class="register-section">
                     <h2>商品登録画面</h2>
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form th:action="@{/blog/register/process}" method="post" enctype="multipart/form-data">
                         <div class="register-section-details">
                             <div class="register-section-details_flex">
                                 <div>商品名</div>

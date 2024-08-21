@@ -21,9 +21,8 @@ public class AdminRergisterController {
 
 	// 登録処理
 	@PostMapping("/admin/register/process")
-	public String adminegisterProcess(@RequestParam String adminName, 
-			                          @RequestParam String adminEmail,
-			                          @RequestParam String password) {
+	public String adminegisterProcess(@RequestParam String adminName, @RequestParam String adminEmail,
+			@RequestParam String password) {
 		// もし、createAdminがtrue admin_login.htmlに遷移
 		// そうでない場合、admin_register.htmlにとどまります。
 		if (adminService.createAdmin(adminEmail, adminName, password)) {

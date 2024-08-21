@@ -5,31 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ブログ一覧</title>
-    <link rel="stylesheet" href="blog_list.css">
+    <link rel="stylesheet" th:href="@{/css/blog_list.css}">
 </head>
 
 <body>
     <section class="blog">
         <nav class="navbar">
             <div class="navbar">
-                <a href="#">ログアウト</a>
-                <a href="#">商品一覧</a>
-                <a href="#">トップページ</a>
+				<ul>
+                <li><a th:href="@{/admin/logout}">ログアウト</a></li>
+                <li><a href="">商品一覧</a></li>
+                <li><a href="">トップページ</a></li>
+				</ul>
             </div>
         </nav>
         <main>
             <article>
                 <h2>ブログ一覧</h2>
                 <div>
-                    <button class="btn">商品登録</button>
+                    <a  th:href="@{/blog/register}" class="btn">商品登録</a>
                 </div>
             </article>
             <ul class="blog_list">
-				<li >
-					<a href="">
-						<img src="admin_login.html" alt="">
-						<p></p><br>
-						<p></p>
+				<li th:each="blog:${blogList}">
+					<a th:href="@{/blog/edit/{blogId}(blogId=${blog.blogId})}">
+						<img th:src="@{/blog-img/{imagePath}(imagePath=${blog.blogImage})}" alt="">
+						<p th:text="${blog.blogTitle}"></p><br>
+						<p th:text="${blog.article}"></p><br>
 					</a>
 				</li>
 			</ul>
