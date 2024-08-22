@@ -53,10 +53,10 @@ public class BlogEditController {
 		}
 	// 更新処理をする
 	@PostMapping("/blog/edit/process")
-	public String blogUpdate(@RequestParam String blogNmae,
+	public String blogUpdate(@RequestParam String blogName,
 							 @RequestParam String blogCategory,
 							 @RequestParam MultipartFile blogImage,
-							 @RequestParam String blogDescription,
+							 @RequestParam String blodDescription,
 							 @RequestParam Long blogId) {
 		// セッションからログインしている人の情報をadminという変数に格納
 		Admin admin = (Admin) session.getAttribute("loginAdminInfo");
@@ -74,7 +74,7 @@ public class BlogEditController {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-				if(blogService.blogUpdate(blogId, blogNmae, blogCategory, blogDescription, fileName, admin.getAdminId())) {
+				if(blogService.blogUpdate(blogId, blogName, blogCategory, fileName,blodDescription,admin.getAdminId())) {
 					return "redirect:/blog/list";
 				}else {
 					return "redirect:/blog/edit"+blogId;

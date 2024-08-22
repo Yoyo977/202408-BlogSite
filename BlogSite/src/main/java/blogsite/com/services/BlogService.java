@@ -57,19 +57,19 @@ public class BlogService {
 	//変更するべきところだけ、セッターを使用してデータの更新をする。
 	//trueを返す
 	public boolean blogUpdate(Long blogId,
-							  String blogNmae,
-							  String blogCategory,
+							  String blogTitle,
+							  String categoryName,
 							  String blogImage,
-							  String blogDescription,
+							  String article,
 							  Long adminId) {
 		if(blogId == null) {
 			return false;
 		}else {
 			Blog blog = blogDao.findByBlogId(blogId);
-			blog.setBlogTitle(blogNmae);
-			blog.setCategoryName(blogCategory);
+			blog.setBlogTitle(blogTitle);
+			blog.setCategoryName(categoryName);
 			blog.setBlogImage(blogImage);
-			blog.setArticle(blogDescription);
+			blog.setArticle(article);
 			blog.setAdminId(adminId);
 			blogDao.save(blog);
 			return true;

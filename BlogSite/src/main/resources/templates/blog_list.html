@@ -25,16 +25,16 @@
                 <div>
                     <a  th:href="@{/blog/register}" class="btn">商品登録</a>
                 </div>
-            </article>
             <ul class="blog_list">
 				<li th:each="blog:${blogList}">
 					<a th:href="@{/blog/edit/{blogId}(blogId=${blog.blogId})}">
 						<img th:src="@{/blog-img/{imagePath}(imagePath=${blog.blogImage})}" alt="">
 						<p th:text="${blog.blogTitle}"></p><br>
-						<p th:text="${blog.article}"></p><br>
+						<p th:text="${blog.article}"></p>
 					</a>
 				</li>
 			</ul>
+			</article>
         </main>
     </section>
     <footer>

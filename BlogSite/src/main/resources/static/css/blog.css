@@ -1,6 +1,6 @@
 body {
 /* 加背景图 */
-background-image: url(image/set.png);
+background-image: url(../image/set.png);
 background-size: cover;
 }
 .navbar {
@@ -95,11 +95,6 @@ h2{
     box-shadow: 0 5px 0 #aaaaaa;
     transition: 0.3s;
     margin: 10px 50px; 
-}
-.container {
-    position: relative;
-    /* 确保容器有足够的高度以容纳底部的图片 */
-    min-height: 45vh; /* 设置最小高度为视口的高度 */
 }
 footer{
     text-align: center;

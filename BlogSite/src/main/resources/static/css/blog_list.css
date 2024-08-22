@@ -1,6 +1,6 @@
 body {
 	/* 加背景图 */
-	background-image: url(image/set.png);
+	background-image: url(../image/animal.png);
 	background-size: cover;
 }
 
@@ -63,12 +63,32 @@ body {
 h2 {
 	font-size: 40px;
 	font-family: cursive;
-	margin-top: 10px;
+	margin-top: 40px;
 	margin-bottom: 8px;
 	color: #7c2929;
-	;
+}
+/*----------商品一覧--------------*/
+.blog_list{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	list-style-type: none;
+}
+.blog_list li{
+	width: 33%;
+	margin:0.5rem;
+	border: 1px solid black;
+}
+.blog_list li a img{
+	padding: 0.5rem;
+	box-sizing: border-box;
+}
+.blog_list li a p{
+	text-align: center;
+	color: black;
 }
 
+/*----------ボタン--------------*/
 .btn {
 	background-color: rgb(110, 110, 199);
 	border: none;
@@ -89,13 +109,6 @@ h2 {
 .btn:active {
 	box-shadow: 0 5px 15px black;
 	transform: translateY(4px);
-}
-
-.container {
-	position: relative;
-	/* 确保容器有足够的高度以容纳底部的图片 */
-	min-height: 65vh;
-	/* 设置最小高度为视口的高度 */
 }
 
 footer {
