@@ -20,16 +20,19 @@ import blogsite.com.models.entity.Blog;
 import blogsite.com.services.BlogService;
 import jakarta.servlet.http.HttpSession;
 
+//@Controllerアノテーションの主な役割は、主にHTMLページなどのビューを生成すること(司令塔)
 @Controller
 public class BlogEditController {
+	//@Autowiredアノテーションをつけて、自動的にインターフェースを実装して、インスタンス化させて、ControllerでBlogServiceを使えるようにします
 	@Autowired
 	private BlogService blogService;
 
 	@Autowired
 	private HttpSession session;
 
-	// 編集画面の表示
+	// 編集画面の表示処理(編集画面から送信されたデータを受け取る)
 	@GetMapping("/blog/edit/{blogId}")
+	//@PathVariable ブログIDを使ってデータベースからブログ情報を取得
 	public String getBlogEditPage(@PathVariable Long blogId, Model model) {
 		// セッションからログインしている人の情報をadminという変数に格納
 		Admin admin = (Admin) session.getAttribute("loginAdminInfo");
@@ -62,6 +65,11 @@ public class BlogEditController {
 		Admin admin = (Admin) session.getAttribute("loginAdminInfo");
 		// もし、admin == nullだったら、ログイン画面にリダイレクトする
 		// そうでない場合、ファイルの保存
+		/**
+		 * 現在の日時情報を元に、ファイル名を作成しています。SimpleDateFormatクラスを使用して、日時のフォーマットを指定している。
+		 * 具体的には、"yyyy-MM-dd-HH-mm-ss-"の形式でフォーマットされた文字列を取得している。
+		 * その後、blogImageオブジェクトから元のファイル名を取得し、フォーマットされた日時文字列と連結して、fileName変数に代入
+		 **/
 		// もし、blogUpdateの結果がtrueの場合は、商品一覧にリダイレクト
 		// そうでない場合、商品編集画面にリダイレクトする
 		if(admin == null) {

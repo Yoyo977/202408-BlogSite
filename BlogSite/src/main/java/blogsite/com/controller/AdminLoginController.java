@@ -10,8 +10,10 @@ import blogsite.com.models.entity.Admin;
 import blogsite.com.services.AdminService;
 import jakarta.servlet.http.HttpSession;
 
+//@Controllerアノテーションの主な役割は、主にHTMLページなどのビューを生成すること(司令塔)
 @Controller
 public class AdminLoginController {
+	//@Autowiredアノテーションをつけて、自動的にインターフェースを実装して、インスタンス化させて、ControllerでAdminServiceを使えるようにします
 	@Autowired
 	private AdminService adminService;
 
@@ -19,13 +21,13 @@ public class AdminLoginController {
 	@Autowired
 	private HttpSession session;
 
-	// ログイン画面の表示
+	// ログイン画面の表示メソッド
 	@GetMapping("/admin/login")
 	public String getAdminLoginPage() {
 		return "admin_login.html";
 	}
 
-	// ログイン処理
+	// ログイン処理(ログイン画面から送信されたデータを受け取る)
 	@PostMapping("/admin/login/process")
 	public String adminLoginProcess(@RequestParam String adminEmail, @RequestParam String password) {
 		// loginCheckメソッドを呼び出してその結果をadminという変数に格納

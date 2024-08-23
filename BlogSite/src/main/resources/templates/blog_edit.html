@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>商品編集画面</title>
+	<title>ブログ編集画面</title>
 	<link rel="stylesheet" th:href="@{/css/blog.css}">
 </head>
 
@@ -13,39 +13,39 @@
 		<nav class="navbar">
 			<ul>
 				<li><a th:href="@{/admin/logout}">ログアウト</a></li>
-				<li><a th:href="@{/blog/list}">商品一覧</a></li>
+				<li><a th:href="@{/blog/list}">ブログ一覧</a></li>
 				<li><a href="">トップページ</a></li>
 			</ul>
 		</nav>
 		<main>
 			<div class="main-inner">
 				<section class="register-section">
-					<h2>商品編集画面</h2>
+					<h2>ブログ編集画面</h2>
 					<form th:action="@{/blog/edit/process}" method="post" enctype="multipart/form-data">
 						<div class="register-section-details">
 							<div class="register-section-details_flex">
-								<div>商品名</div>
+								<div>ブログ名</div>
 								<input type="text" name="blogName" th:value="${blog.blogTitle}">
 							</div>
 							<div class="register-section-details_flex">
 								<div>カテゴリー</div>
 								<select name="blogCategory">
 									<option value=""></option>
-									<option value="シャープペン" th:selected="${blog.categoryName} == 'シャープペン'">シャープペン
+									<option value="スポーツ" th:selected="${blog.categoryName} == 'スポーツ'">スポーツ
 									</option>
-									<option value="消しゴム" th:selected="${blog.categoryName} == '消しゴム'">消しゴム</option>
-									<option value="鉛筆" th:selected="${blog.categoryName} == '鉛筆'">鉛筆</option>
-									<option value="本" th:selected="${blog.categoryName} == '本'">本</option>
-									<option value="ハサミ" th:selected="${blog.categoryName} == 'ハサミ'">ハサミ</option>
-									<option value="印鑑" th:selected="${blog.categoryName} == '印鑑'">印鑑</option>
+									<option value="弁当" th:selected="${blog.categoryName} == '弁当'">弁当</option>
+									<option value="服" th:selected="${blog.categoryName} == '服'">服</option>
+									<option value="フルーツ" th:selected="${blog.categoryName} == 'フルーツ'">フルーツ</option>
+									<option value="おもちゃ" th:selected="${blog.categoryName} == 'おもちゃ'">おもちゃ</option>
+									<option value="飲み物" th:selected="${blog.categoryName} == '飲み物'">飲み物</option>
 								</select>
 							</div>
 							<div class="register-section-details_flex">
-								<div>商品画像</div>
+								<div>ブログ画像</div>
 								<input type="file" name="blogImage">
 							</div>
 							<div class="register-section-details_flex">
-								<div>商品の説明</div>
+								<div>ブログの説明</div>
 								<textarea name="blodDescription" placeholder="商品の説明文"
 									th:text="${blog.article}"></textarea>
 							</div>

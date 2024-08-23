@@ -14,7 +14,7 @@
             <div class="navbar">
 				<ul>
                 <li><a th:href="@{/admin/logout}">ログアウト</a></li>
-                <li><a href="">商品一覧</a></li>
+                <li><a href="">ブログ一覧</a></li>
                 <li><a href="">トップページ</a></li>
 				</ul>
             </div>
@@ -23,7 +23,7 @@
             <article>
                 <h2>ブログ一覧</h2>
                 <div>
-                    <a  th:href="@{/blog/register}" class="btn">商品登録</a>
+                    <a  th:href="@{/blog/register}" class="btn">ブログ登録</a>
                 </div>
             <ul class="blog_list">
 				<li th:each="blog:${blogList}">

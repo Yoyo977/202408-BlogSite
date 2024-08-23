@@ -60,6 +60,11 @@ public class BlogRegisterController {
 			return "redirect:/admin/login";
 		} else {
 			// ファイルの名前を取得
+			/**
+			 * 現在の日時情報を元に、ファイル名を作成しています。SimpleDateFormatクラスを使用して、日時のフォーマットを指定している。
+			 * 具体的には、"yyyy-MM-dd-HH-mm-ss-"の形式でフォーマットされた文字列を取得している。
+			 * その後、blogImageオブジェクトから元のファイル名を取得し、フォーマットされた日時文字列と連結して、fileName変数に代入
+			 **/
 			String fileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date())
 					+ blogImage.getOriginalFilename();
 			// ファイルの保存作業
