@@ -10,6 +10,7 @@ import blogsite.com.models.entity.Blog;
 
 @Service
 public class BlogService {
+	// @Autowiredアノテーションをつけて、自動的にインターフェースを実装して、インスタンス化させて、blogDaoを使えるようにします
 	@Autowired
 	BlogDao blogDao;
 
@@ -37,34 +38,32 @@ public class BlogService {
 			return false;
 		}
 	}
-	//編集画面を表示するときのチェック
-	//もし、blogId == null  null
-	//そうでない場合、
-	//findByBlogIdの情報をコントローラークラスに渡す
+
+	// 編集画面を表示するときのチェック
+	// もし、blogId == null null
+	// そうでない場合、
+	// findByBlogIdの情報をコントローラークラスに渡す
 	public Blog blogEditCheck(Long blogId) {
-		if(blogId == null) {
+		if (blogId == null) {
 			return null;
-		}else {
+		} else {
 			return blogDao.findByBlogId(blogId);
 		}
 	}
-	//更新処理のチェックの
-	//もし、blogId==nullだったら、更新処理はしない
-	//false
-	//そうでない場合、
-	//更新処理をする
-	//コントローラークラスからもらった、blogIdを使って、編集する前の、データを取得
-	//変更するべきところだけ、セッターを使用してデータの更新をする。
-	//trueを返す
-	public boolean blogUpdate(Long blogId,
-							  String blogTitle,
-							  String categoryName,
-							  String blogImage,
-							  String article,
-							  Long adminId) {
-		if(blogId == null) {
+
+	// 更新処理のチェックの
+	// もし、blogId==nullだったら、更新処理はしない
+	// false
+	// そうでない場合、
+	// 更新処理をする
+	// コントローラークラスからもらった、blogIdを使って、編集する前の、データを取得
+	// 変更するべきところだけ、セッターを使用してデータの更新をする。
+	// trueを返す
+	public boolean blogUpdate(Long blogId, String blogTitle, String categoryName, String blogImage, String article,
+			Long adminId) {
+		if (blogId == null) {
 			return false;
-		}else {
+		} else {
 			Blog blog = blogDao.findByBlogId(blogId);
 			blog.setBlogTitle(blogTitle);
 			blog.setCategoryName(categoryName);
@@ -75,21 +74,18 @@ public class BlogService {
 			return true;
 		}
 	}
-	//削除処理のチェック
-	//もし、コントローラークラスから受け取ったblogIdがnull
-	//false
-	//そうでない場合、deleteByBlogIdを使って削除処理
-	//true
+
+	// 削除処理のチェック
+	// もし、コントローラークラスから受け取ったblogIdがnull
+	// false
+	// そうでない場合、deleteByBlogIdを使って削除処理
+	// true
 	public boolean deleteblog(Long blogId) {
-		if(blogId == null) {
+		if (blogId == null) {
 			return false;
-		}else {
+		} else {
 			blogDao.deleteByBlogId(blogId);
 			return true;
 		}
 	}
 }
-
-
-
-

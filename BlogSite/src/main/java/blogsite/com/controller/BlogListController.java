@@ -15,6 +15,11 @@ import jakarta.servlet.http.HttpSession;
 @Controller
 public class BlogListController {
 	@Autowired
+	/**
+	 * sessionは、ユーザー情報を、一時的にサーバー側で保持される、どのページも共通もデータを使いたい時にもちいる機能、（名前、値）という形式で保管される
+	 * sessionを使わない：（重複Loginしないと、ブログ登録画面を表示しません） Login → ブログ一覧 → Login →ブログ登録
+	 * sessionを使う：（何度もLoginせずに、直接ブログ登録画面を表示すること） Login → ブログ一覧 → ブログ登録
+	 **/
 	private HttpSession session;
 
 	@Autowired
@@ -34,7 +39,7 @@ public class BlogListController {
 			// 商品の情報を取得する。
 			List<Blog> blogList = blogService.selectAllBlogList(admin.getAdminId());
 			model.addAttribute("adminName", admin.getAdminName());
-			model.addAttribute("blogList",blogList);
+			model.addAttribute("blogList", blogList);
 			return "blog_list.html";
 		}
 	}

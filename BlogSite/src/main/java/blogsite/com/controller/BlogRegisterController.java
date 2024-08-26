@@ -24,6 +24,11 @@ public class BlogRegisterController {
 	private BlogService blogService;
 
 	@Autowired
+	/**
+	 * sessionは、ユーザー情報を、一時的にサーバー側で保持される、どのページも共通もデータを使いたい時にもちいる機能、（名前、値）という形式で保管される
+	 * sessionを使わない：（重複Loginしないと、ブログ登録画面を表示しません） Login → ブログ一覧 → Login →ブログ登録
+	 * sessionを使う：（何度もLoginせずに、直接ブログ登録画面を表示すること） Login → ブログ一覧 → ブログ登録
+	 **/
 	private HttpSession session;
 
 	// 商品画面の表示
@@ -44,10 +49,8 @@ public class BlogRegisterController {
 
 	// 商品の登録処理
 	@PostMapping("/blog/register/process")
-	public String blogRegisterProcess(@RequestParam String blogName, 
-									  @RequestParam String blogCategory,
-									  @RequestParam MultipartFile blogImage, 
-									  @RequestParam String blogDescription) {
+	public String blogRegisterProcess(@RequestParam String blogName, @RequestParam String blogCategory,
+			@RequestParam MultipartFile blogImage, @RequestParam String blogDescription) {
 		// セッションからログインしている人の情報をadminという変数に格納
 		Admin admin = (Admin) session.getAttribute("loginAdminInfo");
 		// もし、admin==nullだったら、ログイン画面にリダイレクトする
@@ -73,7 +76,7 @@ public class BlogRegisterController {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			if (blogService.createBlog(blogName,blogCategory, fileName,blogDescription, admin.getAdminId())) {
+			if (blogService.createBlog(blogName, blogCategory, fileName, blogDescription, admin.getAdminId())) {
 				return "redirect:/blog/list";
 			} else {
 				return "blog_register.html";

@@ -8,6 +8,7 @@ import blogsite.com.models.entity.Admin;
 
 @Service
 public class AdminService {
+	// @Autowiredアノテーションをつけて、自動的にインターフェースを実装して、インスタンス化させて、adminDaoを使えるようにします
 	@Autowired
 	private AdminDao adminDao;
 

@@ -6,6 +6,14 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
+
+/**
+ * @data //get,set生成方法
+ * @NoArgsConstructor //空のコンストラク生成
+ * @AllArgsConstructor //ALLコンストラク生成
+ * @RequiredArgsConstructor //作成@NonNull的コンストラク
+ * @NonNull //必须变数作成コンストラク
+ **/
 public class Admin {
 	// admin_id設定
 	@Id
